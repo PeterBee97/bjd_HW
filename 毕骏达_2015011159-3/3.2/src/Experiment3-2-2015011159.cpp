@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     bool a,b,c;
-    for(int cases=0;cases<8;cases++)//枚举情况，使用位运算
+    for(int cases=0;cases<7;cases++)//枚举情况，使用位运算
     {
         a=cases&1;//甲
         b=(cases>>1)&1;//乙
