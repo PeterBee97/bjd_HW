@@ -3,20 +3,16 @@ using namespace std;
 
 int main()
 {
-    bool a,b,c;
-    for(int cases=0;cases<8;cases++)//枚举情况，使用位运算
+    bool a[4]={0,0,0,0};
+    for(int i=0;i<4;i++)//枚举情况，使用位运算
     {
-        a=cases&1;//甲
-        b=(cases>>1)&1;//乙
-        c=(cases>>2)&1;//丙
-        if((a^b)&&(b^c)&&((a|b)^c))//判断是否无矛盾，0为说谎
+        a[i]=1;
+        if((a[1]^a[3])&&(a[1]^a[2])&&(a[0]^a[1]))//判断是否无矛盾，1为八卦
         {
-            cout<<"说谎者：";
-            if(!a) cout<<"甲 ";
-            if(!b) cout<<"乙 ";
-            if(!c) cout<<"丙 ";
-            cout<<endl;
+            cout<<"八卦者："<<char(65+i)<<endl;
+            break;
         }
+        a[i]=0;
     }
     return 0;
 }
